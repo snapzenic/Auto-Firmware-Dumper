@@ -188,7 +188,7 @@ jobs:
         git branch -M dump-"$codename"-"$dat"
         git add .
         git commit -s -m "Dump for $brand $codename"
-        gh repo create dump_"$brand"_"$codename" --public --description="$description" --source=. --remote=origin --push --debug
+        gh repo create dump_"$brand"_"$codename" --public --description="$description" --source=. --remote=origin --push
         cd /home/Auto-Dumper
         mkdir vnd_project
         mkdir vnd_project/dump
