@@ -105,11 +105,12 @@ jobs:
            sudo rm -rf DumprX
            exit 1;
         fi;
-        los_dir="lineage-device-tree"
+        los_dir="/home/Auto-Dumper/DumprX/out/lineage-device-tree"
         if [ -d "$los_dir" ]; then
-           cp -r $los_dir /home/Auto-Dumper
+        mv "$los_dir"/* /home/Auto-Dumper/vnd_project/android/device/"$brand"/"$codename"
+        rm -rf "$los_dir"
         else
-           echo "Lineage device tree not found!";
+        echo "LineageOS device tree not found, skipping."
         fi;
         tw_dir="twrp-device-tree"
         if [ -d "$tw_dir" ]; then
